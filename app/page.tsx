@@ -23,7 +23,7 @@ const navLinks = [
   { label: "Dishes", href: "#signature-dishes" },
   { label: "About", href: "#about" },
   { label: "Experience", href: "#experience" },
-  { label: "Reviews", href: "#reviews" },
+  { label: "Opening", href: "#opening-experience" },
   { label: "Location", href: "#location" },
 ];
 
@@ -31,41 +31,23 @@ const featuredCards = [
   {
     title: "Signature Rolls",
     description:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante venenatis dapibus posuere velit aliquet.",
+      "Hand-crafted rolls layered with fresh seafood, delicate textures, and bold umami flavor for a refined yet inviting first impression.",
     image: "/dish-sushi-rolls.jpg",
     kicker: "Guest Favourite",
   },
   {
     title: "House Dumplings",
     description:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed posuere consectetur est at lobortis.",
+      "Steamed dumplings finished with house-made sauces and elevated presentation, designed to feel both comforting and memorable.",
     image: "/dish-dumplings.jpg",
     kicker: "Chef Selected",
   },
   {
     title: "Late Night Pours",
     description:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas sed diam eget risus varius blandit sit amet non magna.",
+      "Curated cocktails and late-night pours designed to complement the menu and carry the atmosphere from dinner into the evening.",
     image: "/dish-cocktail.jpg",
     kicker: "Bar Feature",
-  },
-];
-
-const reviewCards = [
-  {
-    quote:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean lacinia bibendum nulla sed consectetur.",
-    author: "Future Guest",
-  },
-  {
-    quote:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec sed odio dui. Cras justo odio, dapibus ac facilisis in.",
-    author: "Opening Preview",
-  },
-  {
-    quote:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent commodo cursus magna, vel scelerisque nisl consectetur.",
-    author: "Local Diner",
   },
 ];
 
@@ -79,15 +61,30 @@ const socialGallery = [
 const valuePoints = [
   {
     title: "Atmosphere",
-    text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum id ligula porta felis euismod semper.",
+    text: "Warm lighting, rich textures, and a calm, intimate setting designed to make every visit feel elevated without ever feeling overdone.",
   },
   {
     title: "Dining",
-    text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante venenatis dapibus posuere velit aliquet.",
+    text: "A menu experience centered around refined plates, shareable moments, and bold flavors that feel both thoughtful and inviting.",
   },
   {
     title: "Experience",
-    text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed posuere consectetur est at lobortis.",
+    text: "From the first pour to the last bite, every detail is designed to feel intentional, memorable, and worthy of coming back for.",
+  },
+];
+
+const openingExperienceCards = [
+  {
+    title: "A Space With Intention",
+    text: "A warm, modern setting designed for conversation, connection, and evenings that unfold at the right pace.",
+  },
+  {
+    title: "Refined First Impressions",
+    text: "Guests can expect an elevated atmosphere, curated dishes, and a brand experience that feels polished from the moment they arrive.",
+  },
+  {
+    title: "Opening Week Energy",
+    text: "A new destination on the Gold Coast bringing together fresh plates, intimate ambiance, and late-night dining appeal.",
   },
 ];
 
@@ -249,22 +246,6 @@ function WhiteGoldButton({
   );
 }
 
-function DarkFilledButton({
-  children,
-  className = "",
-}: {
-  children: ReactNode;
-  className?: string;
-}) {
-  return (
-    <FilledButton
-      className={`!border-[#17130f] !bg-[#17130f] !text-white hover:opacity-90 ${className}`}
-    >
-      {children}
-    </FilledButton>
-  );
-}
-
 function WhiteOutlineButton({
   children,
   className = "",
@@ -367,7 +348,7 @@ export default function HomePage() {
             </nav>
 
             <div className="hidden lg:block">
-              <GoldFilledButton>Book Soon</GoldFilledButton>
+              <GoldFilledButton>Reserve Opening Week</GoldFilledButton>
             </div>
           </header>
 
@@ -393,21 +374,23 @@ export default function HomePage() {
                 className="mt-8 max-w-2xl text-[1.2rem] leading-8 text-white/86"
                 style={{ fontFamily: "var(--font-body), sans-serif" }}
               >
-                Japanese Bar & Restaurant
+                A modern Japanese dining experience bringing refined flavors,
+                intimate ambiance, and late-night energy to Mermaid Beach.
               </p>
 
               <p
                 className="mt-5 max-w-2xl text-[1.05rem] leading-9 text-white/70"
                 style={{ fontFamily: "var(--font-body), sans-serif" }}
               >
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer
-                posuere erat a ante venenatis dapibus posuere velit aliquet.
-                Maecenas faucibus mollis interdum.
+                Designed to feel calm, elevated, and memorable from the first
+                pour to the last plate, Jin Izakaya introduces a polished new
+                destination for dinner, drinks, and slow evenings on the Gold
+                Coast.
               </p>
 
               <div className="mt-10 flex flex-col gap-4 sm:flex-row">
                 <GoldFilledButton>View Menu</GoldFilledButton>
-                <WhiteOutlineButton>Book a Table</WhiteOutlineButton>
+                <WhiteOutlineButton>Reserve Opening Week</WhiteOutlineButton>
               </div>
             </div>
 
@@ -426,8 +409,8 @@ export default function HomePage() {
                     className="mt-4 text-[2.3rem] leading-[1.15] text-white"
                     style={{ fontFamily: "var(--font-heading), serif" }}
                   >
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit,
-                    sed do eiusmod tempor.
+                    Warm textures, soft lighting, and a dining atmosphere
+                    designed to feel intimate, modern, and intentional.
                   </h3>
                 </div>
               </div>
@@ -441,7 +424,7 @@ export default function HomePage() {
                 className="mt-3 max-w-sm text-[1rem] leading-7 text-white/76"
                 style={{ fontFamily: "var(--font-body), sans-serif" }}
               >
-                Lorem ipsum dolor sit amet consectetur.
+                Refined Japanese dining with an elevated yet welcoming feel.
               </p>
             </div>
 
@@ -478,7 +461,7 @@ export default function HomePage() {
             <SectionHeading
               title="Signature"
               accent="dishes"
-              subcopy="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante venenatis dapibus posuere velit aliquet."
+              subcopy="A curated preview of the refined plates, shareable favorites, and late-night pairings designed to shape the Jin Izakaya experience."
             />
 
             <div className="lg:justify-self-end">
@@ -508,8 +491,8 @@ export default function HomePage() {
                   className="mt-5 max-w-xl text-[1rem] leading-8 text-[#544a40]"
                   style={{ fontFamily: "var(--font-body), sans-serif" }}
                 >
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                  Aenean lacinia bibendum nulla sed consectetur.
+                  A signature plate designed to reflect Jin Izakaya’s approach
+                  to balance, detail, and modern Japanese presentation.
                 </p>
               </div>
             </article>
@@ -592,8 +575,8 @@ export default function HomePage() {
                 className="mt-6 max-w-3xl text-[1.05rem] leading-9 text-white/88"
                 style={{ fontFamily: "var(--font-body), sans-serif" }}
               >
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec
-                id elit non mi porta gravida at eget metus.
+                A first look at the atmosphere, signature plates, and dining
+                moments that will define Jin Izakaya from opening week onward.
               </p>
 
               <div className="mt-8 grid gap-4 md:grid-cols-2">
@@ -601,14 +584,14 @@ export default function HomePage() {
                   className="border border-white/35 bg-white px-5 py-6 text-[1rem] font-medium leading-7 text-[#b88945]"
                   style={{ fontFamily: "var(--font-body), sans-serif" }}
                 >
-                  Lorem ipsum dolor
+                  Signature dining moments
                 </div>
 
                 <div
                   className="border border-white/35 bg-white px-5 py-6 text-[1rem] font-medium leading-7 text-[#b88945]"
                   style={{ fontFamily: "var(--font-body), sans-serif" }}
                 >
-                  Consectetur adipiscing
+                  Elevated late-night atmosphere
                 </div>
               </div>
 
@@ -639,25 +622,25 @@ export default function HomePage() {
               <SectionHeading
                 title="A Modern Take on"
                 accent="Japanese Dining"
-                subcopy="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante venenatis dapibus posuere velit aliquet."
+                subcopy="Crafted dishes, bold flavors, and an elevated dining experience designed for slow evenings and unforgettable nights."
               />
 
               <p
                 className="mt-6 max-w-2xl text-[1.04rem] leading-9 text-[#544a40]"
                 style={{ fontFamily: "var(--font-body), sans-serif" }}
               >
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                Praesent commodo cursus magna, vel scelerisque nisl consectetur
-                et.
+                Jin Izakaya is designed to feel polished yet inviting, bringing
+                together refined presentation, warm interiors, and a dining
+                atmosphere that encourages guests to stay awhile.
               </p>
 
               <p
                 className="mt-6 max-w-2xl text-[1.04rem] leading-9 text-[#544a40]"
                 style={{ fontFamily: "var(--font-body), sans-serif" }}
               >
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed
-                posuere consectetur est at lobortis. Donec ullamcorper nulla non
-                metus auctor fringilla.
+                From signature dishes to curated late-night pours, the concept
+                is rooted in creating an experience that feels intimate,
+                memorable, and distinctly modern.
               </p>
 
               <div className="mt-10 flex flex-col gap-4 sm:flex-row">
@@ -690,7 +673,7 @@ export default function HomePage() {
               <SectionHeading
                 title="Designed for"
                 accent="slow evenings"
-                subcopy="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante venenatis dapibus posuere velit aliquet."
+                subcopy="An atmosphere designed for connection, conversation, and slow dining. From warm lighting to curated interiors, every detail is intentional."
               />
 
               <div className="mt-10 space-y-8">
@@ -716,43 +699,43 @@ export default function HomePage() {
               </div>
 
               <div className="mt-10">
-                <WhiteGoldButton>Book Your Table</WhiteGoldButton>
+                <WhiteGoldButton>Reserve Your Table</WhiteGoldButton>
               </div>
             </div>
           </div>
         </Container>
       </section>
 
-      {/* REVIEWS */}
+      {/* OPENING EXPERIENCE */}
       <section
-        id="reviews"
+        id="opening-experience"
         className="border-b border-black/10 bg-[#f6f1e8] py-24 lg:py-32"
       >
         <Container>
           <SectionHeading
-            title="What people are"
-            accent="saying"
-            subcopy="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec id elit non mi porta gravida at eget metus."
+            title="Opening"
+            accent="experience"
+            subcopy="A first look at what guests can expect from Jin Izakaya — from the atmosphere to the pacing, menu energy, and overall feel of the evening."
           />
 
           <div className="mt-14 grid gap-8 xl:grid-cols-3">
-            {reviewCards.map((review) => (
+            {openingExperienceCards.map((card) => (
               <article
-                key={review.author}
+                key={card.title}
                 className="border border-black/10 bg-white p-8 sm:p-10"
               >
-                <p
-                  className="text-[2rem] leading-[1.25] tracking-[-0.03em] text-[#17130f] sm:text-[2.4rem]"
+                <h3
+                  className="text-[2rem] leading-[1.1] tracking-[-0.03em] text-[#17130f] sm:text-[2.35rem]"
                   style={{ fontFamily: "var(--font-heading), serif" }}
                 >
-                  “{review.quote}”
-                </p>
+                  {card.title}
+                </h3>
 
                 <p
-                  className="mt-8 text-[11px] font-semibold uppercase tracking-[0.42em] text-[#b88945]"
+                  className="mt-5 text-[1rem] leading-8 text-[#544a40]"
                   style={{ fontFamily: "var(--font-body), sans-serif" }}
                 >
-                  {review.author}
+                  {card.text}
                 </p>
               </article>
             ))}
@@ -776,21 +759,22 @@ export default function HomePage() {
                 className="mt-3 text-[3rem] leading-[0.98] tracking-[-0.04em] text-white sm:text-[4rem] lg:text-[5rem]"
                 style={{ fontFamily: "var(--font-heading), serif" }}
               >
-                Ready for an evening at Jin?
+                Be among the first to experience Jin Izakaya.
               </h2>
 
               <p
                 className="mt-6 max-w-2xl text-[1.05rem] leading-9 text-white/72"
                 style={{ fontFamily: "var(--font-body), sans-serif" }}
               >
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer
-                posuere erat a ante venenatis dapibus posuere velit aliquet.
+                A modern Japanese dining destination designed for refined
+                evenings, signature flavors, and a memorable first impression on
+                the Gold Coast.
               </p>
             </div>
 
             <div className="flex flex-col gap-4 sm:flex-row xl:flex-col">
-              <GoldFilledButton>Book a Table</GoldFilledButton>
-              <WhiteOutlineButton>Order Soon</WhiteOutlineButton>
+              <GoldFilledButton>Reserve Your Table</GoldFilledButton>
+              <WhiteOutlineButton>Join Opening List</WhiteOutlineButton>
             </div>
           </div>
         </Container>
@@ -807,7 +791,7 @@ export default function HomePage() {
               <SectionHeading
                 title="Find Us in"
                 accent="Mermaid Beach"
-                subcopy="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante venenatis dapibus posuere velit aliquet."
+                subcopy="Located in Mermaid Beach, Gold Coast — Jin Izakaya brings a new standard of Japanese dining to the area."
               />
 
               <div className="mt-10 space-y-6">
@@ -819,7 +803,7 @@ export default function HomePage() {
                       className="mt-3 text-[1.1rem] leading-8 text-[#17130f]"
                       style={{ fontFamily: "var(--font-body), sans-serif" }}
                     >
-                      Mermaid Beach, Gold Coast
+                      Shop 12, 2563 Gold Coast Highway, Mermaid Beach
                     </p>
                   </div>
                 </div>
@@ -878,7 +862,7 @@ export default function HomePage() {
             <SectionHeading
               title="Stay"
               accent="connected"
-              subcopy="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante venenatis dapibus posuere velit aliquet."
+              subcopy="Follow the build, opening updates, and the first look at the atmosphere, dishes, and dining moments still to come."
               light
             />
 
@@ -920,13 +904,14 @@ export default function HomePage() {
                 className="mt-5 text-[1rem] leading-8 text-white/68"
                 style={{ fontFamily: "var(--font-body), sans-serif" }}
               >
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                Modern Japanese dining, refined late-night atmosphere, and a
+                new opening soon in Mermaid Beach.
                 <br />
-                Opening Soon — Mermaid Beach, Gold Coast
+                Gold Coast, Australia
               </p>
 
               <div className="mt-8 flex flex-col gap-4 sm:flex-row">
-                <GoldFilledButton>Book Now</GoldFilledButton>
+                <GoldFilledButton>Reserve Your Table</GoldFilledButton>
                 <WhiteGoldButton>View Menu</WhiteGoldButton>
               </div>
             </div>
@@ -934,15 +919,27 @@ export default function HomePage() {
             <div className="grid gap-8 sm:grid-cols-3">
               <FooterColumn
                 title="Visit"
-                items={["Mermaid Beach", "Gold Coast", "Opening Soon"]}
+                items={[
+                  "Shop 12, 2563 Gold Coast Highway",
+                  "Mermaid Beach",
+                  "Opening Soon",
+                ]}
               />
               <FooterColumn
                 title="Connect"
-                items={["@jinizakaya", "hello@jinizakaya.com", "Bookings Coming Soon"]}
+                items={[
+                  "@jin.izakaya",
+                  "jin.izakaya1@gmail.com",
+                  "Bookings Coming Soon",
+                ]}
               />
               <FooterColumn
                 title="Hours"
-                items={["Launching Soon", "Dinner Service", "Late Night Atmosphere"]}
+                items={[
+                  "Launching Soon",
+                  "Dinner Service",
+                  "Late Night Dining",
+                ]}
               />
             </div>
           </div>
@@ -952,7 +949,7 @@ export default function HomePage() {
             style={{ fontFamily: "var(--font-body), sans-serif" }}
           >
             <p>Designed by Ashanti Yow from The Social Infinity</p>
-            <p>Designed for later recreation</p>
+            <p>Homepage concept mockup</p>
           </div>
         </Container>
       </footer>
